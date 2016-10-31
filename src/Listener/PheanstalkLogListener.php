@@ -48,7 +48,7 @@ class PheanstalkLogListener implements EventSubscriberInterface
      * @param CommandEvent $event
      * @param string       $eventName
      */
-    public function onCommand(CommandEvent $event, $eventName)
+    public function onCommand(CommandEvent $event/* ATTN: HVT: this is Symfony >2.3 stuff, $eventName*/)
     {
         if (!$this->logger) {
             return;
@@ -66,7 +66,7 @@ class PheanstalkLogListener implements EventSubscriberInterface
             $pheanstalkName = $pheanstalk->getName();
         }
 
-        $nameExploded = explode('.', $eventName);
+        $nameExploded = explode('.', $event->getName());
 
         $this->logger->info(
             'Pheanstalk command: '.$nameExploded[count($nameExploded) - 1],
