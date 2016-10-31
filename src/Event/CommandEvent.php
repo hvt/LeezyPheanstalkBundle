@@ -26,6 +26,7 @@ class CommandEvent extends Event
     const RELEASE            = 'leezy.pheanstalk.event.release';
     const RESERVE            = 'leezy.pheanstalk.event.reserve';
     const RESERVE_FROM_TUBE  = 'leezy.pheanstalk.event.reserve_from_tube';
+    const RESERVE_PAUSE      = 'leezy.pheanstalk.event.reserve_pause';
     const STATS              = 'leezy.pheanstalk.event.stats';
     const STATS_TUBE         = 'leezy.pheanstalk.event.stats_tube';
     const STATS_JOB          = 'leezy.pheanstalk.event.stats_job';

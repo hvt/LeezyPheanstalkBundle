@@ -308,6 +308,18 @@ class PheanstalkProxy implements PheanstalkProxyInterface
     /**
      * {@inheritDoc}
      */
+    public function reservePause($delay, $timeout = null)
+    {
+        if ($this->dispatcher) {
+            $this->dispatcher->dispatch(CommandEvent::RESERVE_PAUSE, new CommandEvent($this, ['delay' => $delay, 'timeout' => $timeout]));
+        }
+
+        return $this->pheanstalk->reservePause($delay, $timeout);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function statsJob($job)
     {
         if ($this->dispatcher) {

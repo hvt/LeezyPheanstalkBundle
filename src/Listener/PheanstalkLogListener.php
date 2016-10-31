@@ -68,7 +68,7 @@ class PheanstalkLogListener implements EventSubscriberInterface
 
         $nameExploded = explode('.', $eventName);
 
-        $this->logger->info(
+        $this->logger->debug(
             'Pheanstalk command: '.$nameExploded[count($nameExploded) - 1],
             [
                 'payload'    => $event->getPayload(),
