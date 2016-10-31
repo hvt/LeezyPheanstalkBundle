@@ -63,6 +63,7 @@ class PheanstalkProxyTest extends \PHPUnit_Framework_TestCase
             ['release', ['foo', 42, 42]],
             ['reserve', [42]],
             ['reserveFromTube', ['foo', 42]],
+            ['reservePause', [17, 42]],
             ['statsJob', ['foo']],
             ['statsTube', ['foo']],
             ['stats'],
